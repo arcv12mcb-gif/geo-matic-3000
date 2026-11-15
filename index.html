@@ -31,20 +31,120 @@
 @media (max-width:480px){.stage-badge{font-size:.58rem}.showcase .rotate{margin-bottom:.1rem}}
 @media(prefers-reduced-motion:reduce){.film-sticky{position:static}}
 
+/* GEO-MATIC / instrument panel redesign */
+:root{--paper:#f1f0e8;--ink:#1e231c;--muted:#697064;--line:#c9cbbd;--green:#c8f174;--dark:#111711;--orange:#f0784d;--mono:"Geist Mono",monospace;--ease:cubic-bezier(.2,.75,.2,1)}
+html{scroll-padding-top:76px}
+body{background:var(--paper)}
+.top{position:sticky;top:0;z-index:20;background:#111711ed;color:#e8eddf;border-color:#394137;backdrop-filter:blur(14px)}
+.top .wrap{min-height:64px}.brand-mark{background:var(--green);color:#172015;border-radius:2px}
+nav a:last-child{border-color:#58604f}nav a:hover{color:var(--green)}
+.hero{width:100%;max-width:none;min-height:min(780px,calc(100svh - 64px));padding:clamp(2.5rem,6vw,5.5rem) max(40px,calc((100vw - 1270px)/2));grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);gap:clamp(1rem,4vw,4rem);overflow:hidden;background:radial-gradient(ellipse at 75% 52%,#354330 0,transparent 42%),linear-gradient(115deg,#111711,#192019 65%,#151a14);color:#eef1e7;position:relative}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background:linear-gradient(#c6f17416 1px,transparent 1px),linear-gradient(90deg,#c6f17416 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,transparent,#000 55%,#000)}
+.hero::after{content:"GEO-MATIC / FIELD UNIT 3000";position:absolute;right:max(40px,calc((100vw - 1270px)/2));top:1.4rem;color:#c7d0bd8a;font:500 .62rem var(--mono);letter-spacing:.14em}
+.intro{z-index:2}.intro .mono{color:#c4cfb9;margin-bottom:1.7rem}
+.intro h1{max-width:620px;font-size:clamp(5.3rem,10.3vw,10.5rem);line-height:.77;letter-spacing:-.095em;margin-bottom:1.6rem}
+.intro h1 span{color:var(--green)}.intro p:not(.mono){font-size:clamp(1rem,1.3vw,1.17rem);max-width:385px;color:#cbd2c5;line-height:1.65}
+.intro .btn{background:var(--green);color:#172015;border-radius:2px}.intro .btn:hover{background:#d9ff9b}.intro .quiet{color:#d6ddcf}
+.showcase{z-index:1;min-height:0;align-content:center;justify-items:stretch;background:none;border:0;border-radius:0;padding:1.5rem 0 0;overflow:visible}
+.stage-badge{top:0;left:0;color:#dfe9d9}.stage{width:100%;aspect-ratio:1.32;perspective:1250px}
+.stage::after{content:"";position:absolute;inset:8% 4%;border:1px solid #bddd9f23;pointer-events:none}
+.shadow{background:#050806;opacity:.65;filter:blur(32px)}
+.machine{--rx:-7deg;--ry:-13deg;filter:drop-shadow(20px 34px 30px #0306037a);animation:unit-hover 7s ease-in-out infinite}
+.machine-face{border-color:#677057;background:linear-gradient(145deg,#e0ddca,#b9b8a4 70%,#898d7d);box-shadow:inset 0 2px 1px #fff9e8,inset 0 -7px 13px #27301c55,0 1px 0 #f7f4e6}
+.machine-top{border-color:#68705b;background:linear-gradient(120deg,#d9d6c3,#a6aa99)}
+.machine-side,.machine-left{border-color:#566149;background:repeating-linear-gradient(transparent 0 7px,#454d3c 8px 10px,transparent 11px 14px) center 28%/50% 34% no-repeat,linear-gradient(120deg,#747b69,#abb09a)}
+.machine-model{color:#303629}.screen{background:repeating-linear-gradient(#ffffff09 0 1px,transparent 1px 4px),radial-gradient(ellipse,#405a30,#142215);border-color:#333a30}
+.showcase .rotate{color:#d8e0d1}.showcase .rotate button{border-radius:2px;border-color:#717d66}.showcase .rotate button:hover{background:#293428}
+.showcase .stage:focus-visible{outline:2px solid var(--green)}.stage-badge::before{background:var(--green)}
+.strip{background:#dfe3d5;border-color:#c5cabb}.strip .wrap{padding-block:16px;font:500 .67rem var(--mono);letter-spacing:.1em;text-transform:uppercase}.strip b{font-weight:600}
+.film{width:min(100% - 80px,1270px)}
+.film-sticky{border-radius:2px;min-height:420px;background:radial-gradient(ellipse at 80% 85%,#31462b,#151b15 65%);border:1px solid #354331}
+.film-sticky::before{background-size:26px 26px;opacity:.8}.film-sign{font-size:clamp(4rem,9vw,8rem);text-shadow:0 0 34px #c8f17433}
+.film-sticky p{font:500 .75rem var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.progress-track{height:2px}.progress-track i{transition:transform 600ms var(--ease)}
+.chapter{border-color:#c7cbbd;transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.chapter h3{font-size:clamp(2rem,4.4vw,4.2rem)}.chapter p{max-width:410px}
+#demo.lab{position:relative;overflow:hidden;background:#141a14}
+#demo.lab::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(#c8f17410 1px,transparent 1px),linear-gradient(90deg,#c8f17410 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse at 20% 45%,#000,transparent 72%)}
+#demo .wrap{position:relative}.lab .section-head p{color:#bdc7b4}#demo h2{color:#f0f2e9}
+.demo{border:1px solid #4a5644;border-radius:2px;box-shadow:0 28px 90px #0003}
+.diagram{background:#1c251b;background-image:linear-gradient(#d9ffb011 1px,transparent 1px),linear-gradient(90deg,#d9ffb011 1px,transparent 1px);background-size:24px 24px}
+.demo-copy{background:#1b221a}.demo-copy h3{color:#f2f3eb}.demo-copy .solution{color:var(--green)!important}.demo-copy .btn{border-radius:2px}
+#features .section-head{align-items:start}#features .section-head h2{font-size:clamp(3.5rem,8vw,7.4rem);line-height:.83}
+#features .section-head p{max-width:300px}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#c8cbbd;border:1px solid #c8cbbd}
+.features details{border:0;background:#f5f4ed;min-width:0;transition:background 220ms ease}.features details:hover,.features details[open]{background:#e9ecdf}
+.features summary{min-height:150px;padding:1.3rem;grid-template-columns:2.4rem 1fr 1.4rem;align-content:start;align-items:start;gap:.75rem}
+.features summary .mono{grid-row:1;grid-column:1;color:#75816b}
+.features summary .feature-name{grid-row:2;grid-column:1/3;font-size:clamp(1.45rem,2.8vw,2.3rem);letter-spacing:-.06em;line-height:.98;text-transform:capitalize}
+.features summary .topic{grid-row:3;grid-column:1/3;font-size:.76rem;line-height:1.45}
+.features summary .plus{grid-row:1;grid-column:3;justify-self:end;display:grid;place-items:center;border:1px solid #aeb4a6;width:28px;height:28px;border-radius:50%;font:400 1.2rem var(--mono);transition:transform 250ms ease,background 250ms ease}
+.features details[open] summary .plus{background:var(--green);transform:rotate(45deg)}
+.features .example{padding:0 1.35rem 1.5rem}.features .example h3{font-size:1.05rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.features .example .pitch{font-size:1.05rem;font-weight:600}.features .example li{padding-left:.2rem}.features details .example{animation:reveal-copy 350ms var(--ease) both}
+.draft{font:500 .65rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.campaign{margin-top:1.5rem;background:transparent}.store{background:#e3e6d9}.store .wrap{align-items:center}
+.store-panel{border-radius:2px;box-shadow:14px 14px 0 #c4cbbc}.store-panel .btn{border-radius:2px}.receipt{align-self:start}.paper{border-radius:0}
+.broadcast{border-top:1px solid var(--line)}footer{background:#141a14;color:#d3dccd;border-color:#374035}
+.btn{border-radius:2px}
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity 650ms var(--ease),transform 650ms var(--ease)}
+[data-reveal].is-visible{opacity:1;transform:translateY(0)}
+.hero .intro{animation:hero-fade 850ms var(--ease) both}.hero .showcase{animation:hero-in 1000ms var(--ease) 130ms both}
+@keyframes hero-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes unit-hover{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes reveal-copy{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){
+ .hero{width:100%;padding:4.8rem 18px 2rem;grid-template-columns:1fr;gap:0;min-height:auto}
+ .hero::after{right:18px;top:1rem;font-size:.52rem}.intro h1{font-size:clamp(5.1rem,17vw,8rem);max-width:7ch}
+ .showcase{margin-top:1.8rem}.stage{max-width:680px;margin-inline:auto}.film{width:calc(100% - 36px)}
+ .film-sticky{min-height:245px}.features{grid-template-columns:1fr}.features summary{min-height:130px}
+}
+@media(max-width:480px){
+ .top .wrap{min-height:58px}.hero{padding-top:4.2rem}.hero::after{letter-spacing:.04em}
+ .intro h1{font-size:clamp(4.6rem,19vw,6rem);line-height:.82}.intro p:not(.mono){max-width:31ch}
+ .showcase{padding-top:.7rem}.stage{aspect-ratio:1.2}
+ .machine{--depth:min(19vw,70px);--half-depth:min(9.5vw,35px)}
+ .strip .wrap{font-size:.54rem;gap:.5rem}.strip .wrap span{text-align:right}
+ #features .section-head h2{font-size:clamp(3.7rem,18vw,5.5rem)}
+ .features summary{min-height:122px;padding:1rem}.features .example{padding-inline:1rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .machine,.hero .intro,.hero .showcase{animation:none!important}
+ [data-reveal]{opacity:1;transform:none;transition:none}
+}
+
+/* Scroll-driven hero camera pass: the machine stays in its own 3D layer. */
+.hero{min-height:145svh;align-items:start}
+.hero .intro{position:sticky;top:17vh;align-self:start}
+.hero .showcase{position:sticky;top:13vh;align-self:start;transform:translate3d(calc(var(--story-progress,0)*5vw),calc(var(--story-progress,0)*32px),0) scale(calc(1 + var(--story-progress,0)*.13));transform-origin:center center;animation:hero-fade 1s var(--ease) 130ms both}
+.hero .intro{opacity:calc(1 - var(--story-progress,0)*1.45);transform:translate3d(0,calc(var(--story-progress,0)*-32px),0)}
+@keyframes hero-fade{from{opacity:0}to{opacity:1}}
+.stage{transition:filter 300ms ease}
+@media(max-width:800px){
+ .hero{min-height:auto;align-items:center}
+ .hero .intro,.hero .showcase{position:relative;top:auto;opacity:1;transform:none}
+ .hero .showcase{animation:hero-in 1s var(--ease) 130ms both}
+}
+
+.intro h1{animation:headline-reveal 900ms var(--ease) 90ms both}
+@keyframes headline-reveal{from{clip-path:inset(0 0 92% 0);transform:translateY(22px)}to{clip-path:inset(0);transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.intro h1{animation:none;clip-path:none}}
+.hero{width:100%;overflow:visible}
+.hero .showcase{transform:translate3d(calc(var(--story-progress,0)*1.5vw),calc(var(--story-progress,0)*22px),0) scale(calc(1 + var(--story-progress,0)*.07))}
 </style>
 </head>
 <body id="top">
 <header class="top"><div class="wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">×</span> GEO-MATIC 3000</a><nav aria-label="Main navigation"><a href="#demo">Demo</a><a href="#features">Features</a><a href="#store">Find a store <span aria-hidden="true">↗</span></a></nav></div></header>
 <main>
 <section class="hero wrap">
-<div class="intro"><p class="mono">Geometry homework, decoded.</p><h1>Find your <span>X.</span></h1><p>Meet GEO-MATIC 3000. Feed it a geometry problem and it’ll show you which rule to use, one step at a time.</p><div class="actions"><a class="btn" href="#demo">Try the demo <span aria-hidden="true">↓</span></a><a class="quiet" href="#radio">Listen to the radio spot</a></div></div>
+<div class="intro"><p class="mono">Geometry homework / decoded</p><h1>Find your <span>X.</span></h1><p>Feed the machine a geometry problem. Get the rule, the working, and an answer you can check.<div class="actions"><a class="btn" href="#demo">Try the demo <span aria-hidden="true">↓</span></a><a class="quiet" href="#radio">Listen to the radio spot</a></div></div>
 <div class="showcase">
-<div class="stage" id="stage" tabindex="0" role="group" aria-label="Rotatable model of GEO-MATIC 3000. Use arrow keys to rotate.">
+<div class="stage" id="stage" tabindex="0" role="group" aria-label="Interactive GEO-MATIC 3000 model. Drag to tilt slightly, or use arrow keys.">
 <span class="stage-badge mono">Interactive model</span><div class="shadow"></div><div class="machine" id="machine">
 <div class="machine-side"></div><div class="machine-left"></div><div class="machine-top"></div>
 <div class="machine-face"><div class="machine-model">GEO-MATIC&nbsp; 3000 <span class="lamp" aria-hidden="true"></span></div><div class="screen"><small>GEOMETRY MODE</small><span id="screen-text">X = ?</span></div><div class="controls"><button class="find" id="find">FIND X</button><div class="buttons" aria-hidden="true"><i></i><i></i><i></i></div></div><div class="slot"><span class="ticket" aria-hidden="true">GEOMETRY HOMEWORK</span></div><div class="slot-label">PAPER INPUT</div></div>
 </div></div>
-<div class="rotate mono"><button type="button" data-turn="-1" aria-label="Rotate left">←</button> Drag to rotate <button type="button" data-turn="1" aria-label="Rotate right">→</button></div>
+<div class="rotate mono"><button type="button" data-turn="-1" aria-label="Rotate left">←</button> Drag to tilt <button type="button" data-turn="1" aria-label="Rotate right">→</button></div>
 </div></section>
 <div class="strip"><div class="wrap mono"><b>Don’t panic! Go GEO-MATIC!</b><span>Geometry Diff · Internet advertisement</span></div></div>
 
@@ -57,13 +157,13 @@
       <div><p id="film-caption">Identify what you know.</p><span class="progress-track"><i id="film-progress"></i></span></div>
     </div>
     <div class="chapters">
-      <article class="chapter" data-mode="INPUT" data-sign="X = ?" data-caption="Identify what you know.">
+      <article data-reveal class="chapter" data-mode="INPUT" data-sign="X = ?" data-caption="Identify what you know.">
         <h3>Feed in a problem.</h3><p>Start with the diagram. Mark the clues you’re given and identify the quantity you need to find.</p>
       </article>
-      <article class="chapter" data-mode="RULE" data-sign="∠ ≅ ∠" data-caption="Choose a geometry rule.">
+      <article data-reveal class="chapter" data-mode="RULE" data-sign="∠ ≅ ∠" data-caption="Choose a geometry rule.">
         <h3>Find the relationship.</h3><p>Parallel rails? Look for corresponding angles. Crossing braces? Check for vertical angles. The diagram tells you which rule fits.</p>
       </article>
-      <article class="chapter" data-mode="OUTPUT" data-sign="X = 68°" data-caption="Explain and check your answer.">
+      <article data-reveal class="chapter" data-mode="OUTPUT" data-sign="X = 68°" data-caption="Explain and check your answer.">
         <h3>Show the work.</h3><p>Write the equation, solve it, and check whether the answer makes sense in the original diagram. Personal responsibility is still required.</p>
       </article>
     </div>
@@ -80,7 +180,7 @@
   </form>
   <p class="practice-status" id="practice-status" aria-live="polite"></p>
 </div></div></div></div></section>
-<section class="section wrap" id="features"><div class="section-head"><h2>Eight ways<br>to find X.</h2><p>Open any feature to see its problem, learning objective, and annotated solution.</p></div><div class="features" id="feature-list"></div><p class="draft">Portfolio draft. Exact curriculum sections and quarters still need class confirmation.</p>
+<section class="section wrap" id="features"><div class="section-head"><h2>What it<br>can do.</h2><p>Eight geometry tools turn a diagram into a rule, a worked solution, and a result you can verify.</p></div><div class="features" id="feature-list"></div>
 <details class="campaign"><summary><span></span><span class="feature-name">Campaign guide</span><span class="topic">Geometry Diff portfolio</span><span class="plus" aria-hidden="true">+</span></summary>
 <div class="example"><h3>How the ads work together</h3><dl><dt>Audience</dt><dd>Geometry students who get stuck on diagrams or multi-step problems.</dd><dt>Radio commercial</dt><dd>Introduce the machine and send listeners to the product website.</dd><dt>Internet advertisement</dt><dd>Let visitors try a worked example and explore eight features. The fictional showroom continues the story with a business card and coupon.</dd></dl></div></details></section>
 <section class="section store" id="store"><div class="wrap"><div><h2>See it<br>in store.</h2><p>Heard the ad? Tried the demo? Step into our fictional showroom and take home the salesperson’s card and a coupon.</p></div><div class="store-panel"><p class="mono">Fictional dealer</p><h3>Right Angle Electronics</h3><p>Ask the sales desk for the GEO-MATIC 3000 floor model.</p><ul><li>Showroom demo and eight worked examples</li><li>Take-home business card and coupon</li></ul><button class="btn" id="purchase" aria-controls="receipt" aria-expanded="false">Simulate purchase <span aria-hidden="true">↗</span></button></div><div class="receipt" id="receipt" hidden><div class="paper-row"><article class="paper"><p class="mono">Right Angle Electronics</p><h3>GEO-MATIC Sales Desk</h3><p>Product demos and geometry emergencies.</p><p class="mono">Fictional business card</p></article><article class="paper coupon"><p class="mono">GEO-MATIC 3000</p><h3>$10 off</h3><p>Your next Geometry Emergency Kit.</p><p class="mono">Fictional coupon · No cash value</p></article></div><button class="btn outline" id="print">Print card and coupon</button></div></div></section>
@@ -176,12 +276,12 @@ document.querySelector('#find').addEventListener('click', () => {
   }, 660);
 });
 
-let angleX = -12;
-let angleY = -23;
+let angleX = -7;
+let angleY = -13;
 let drag;
 function rotate(dx, dy = 0) {
-  angleY = Math.max(-45, Math.min(0, angleY + dx));
-  angleX = Math.max(-28, Math.min(4, angleX + dy));
+  angleY = Math.max(-25, Math.min(1, angleY + dx * 0.45));
+  angleX = Math.max(-17, Math.min(2, angleX + dy * 0.42));
   machine.style.setProperty('--ry', angleY + 'deg');
   machine.style.setProperty('--rx', angleX + 'deg');
   stage.dispatchEvent(new Event('rig-update'));
@@ -197,10 +297,11 @@ stage.addEventListener('pointerdown', event => {
   drag = { id: event.pointerId, x: event.clientX, y: event.clientY };
   stage.setPointerCapture(event.pointerId);
   stage.classList.add('drag');
+  machine.style.animationPlayState = 'paused';
 });
 stage.addEventListener('pointermove', event => {
   if (drag?.id !== event.pointerId) return;
-  rotate((event.clientX - drag.x) / 3, (drag.y - event.clientY) / 4);
+  rotate((event.clientX - drag.x) / 2.5, (drag.y - event.clientY) / 2.8);
   drag.x = event.clientX;
   drag.y = event.clientY;
 });
@@ -209,6 +310,7 @@ for (const event of ['pointerup','pointercancel','lostpointercapture']) {
     if (pointer.pointerId !== drag?.id) return;
     drag = null;
     stage.classList.remove('drag');
+    machine.style.animationPlayState = 'running';
   });
 }
 
@@ -233,6 +335,43 @@ document.querySelector('#practice-form').addEventListener('submit', event => {
     : 'Try again. Think about what happens to the two corresponding angles when the lines are parallel.';
 });
 
+const heroScene = document.querySelector('.hero');
+let heroFrame = 0;
+function updateHeroScene() {
+  heroFrame = 0;
+  const mobile = matchMedia('(max-width: 800px)').matches;
+  if (mobile) {
+    heroScene.style.setProperty('--story-progress', '0');
+    return;
+  }
+  const distance = heroScene.offsetHeight - window.innerHeight;
+  const progress = distance > 0
+    ? Math.max(0, Math.min(1, (window.scrollY - heroScene.offsetTop) / distance))
+    : 0;
+  heroScene.style.setProperty('--story-progress', progress.toFixed(3));
+}
+function queueHeroScene() {
+  if (!heroFrame) heroFrame = requestAnimationFrame(updateHeroScene);
+}
+window.addEventListener('scroll', queueHeroScene, { passive: true });
+window.addEventListener('resize', queueHeroScene, { passive: true });
+updateHeroScene();
+const revealNodes = [...document.querySelectorAll('[data-reveal]'), ...document.querySelectorAll('#feature-list details')];
+if ('IntersectionObserver' in window && !reduced.matches) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  revealNodes.forEach((node, index) => {
+    if (node.matches('#feature-list details')) node.style.transitionDelay = (index % 4) * 45 + 'ms';
+    revealObserver.observe(node);
+  });
+} else {
+  revealNodes.forEach(node => node.classList.add('is-visible'));
+}
 const chapters = [...document.querySelectorAll('.chapter')];
 if ('IntersectionObserver' in window && !reduced.matches) {
   const chapterObserver = new IntersectionObserver(entries => {
